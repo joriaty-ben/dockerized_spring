@@ -26,12 +26,9 @@ services:
   spring:
     restart: always
     build: ./spring
-    working_dir: /app
     volumes:
       - ./spring:/app
       - ~/.m2:/root/.m2
-    expose:
-      - "8080"
     command: mvn clean spring-boot:run
     depends_on:
       - mysql
